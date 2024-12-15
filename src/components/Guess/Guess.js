@@ -1,16 +1,16 @@
 import React from 'react';
+import { range } from '../../utils';
+import {checkGuess} from "../../game-helpers.js"
 
-function Guess({word}) {
-  const 
-  return 
-  
-  (
-    <p class="guess">
-      <span class="cell">H</span>
-      <span class="cell">E</span>
-      <span class="cell">L</span>
-      <span class="cell">L</span>
-      <span class="cell">O</span>
+function Guess({word, answer}) {
+  if (word) { 
+    word = checkGuess(word, answer)
+  }
+  return (
+    <p className="guess">
+      {range(5).map(num => (
+        <span key={crypto.randomUUID()} className={`cell ${ word ? word[num].status : ""}`}>{word ? word[num].letter : undefined}</span>
+      ))}
     </p>
     )
   ;

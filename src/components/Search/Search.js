@@ -6,7 +6,7 @@ function Search({handleAddGuess}) {
     event.preventDefault();
 
     console.log(search);
-    handleAddGuess({search, id: crypto.randomUUID()});
+    handleAddGuess(search);
     setSearch("");
   }
   return (
